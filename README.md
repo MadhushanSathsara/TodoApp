@@ -1,31 +1,20 @@
-TODO App
+# TODO App
+A simple web application to manage daily tasks.
 
-A simple TODO app built with HTML, CSS, and JavaScript. This app allows you to add, delete, and save tasks using the browser's localStorage.
+## Features
+- Add tasks
+- Delete tasks
+- Tasks are saved in browser storage
 
-Features
+## Usage
+1. Open `index.html` in your browser
+2. Type a task in the input field
+3. Click "Add To List" to save
+4. Delete tasks using the "Delete" button
 
-Add tasks to the TODO list
+## Technologies
+- HTML
+- CSS
+- JavaScript
 
-Delete tasks
 
-Tasks are automatically saved in the browser so they persist on refresh
-
-How to Use
-
-Clone or download this repository.
-
-Open index.html in your web browser.
-
-Add your tasks using the input box and click the "Add To List" button.
-
-Delete tasks by clicking the "Delete" button next to each task.
-
-Tasks will persist thanks to localStorage.
-
-Technologies Used
-
-HTML
-
-CSS
-
-JavaScript
