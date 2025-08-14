@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>TODO</title>
+</head>
+<body>
+
+     <div class="body">
+        <div class="header">
+            <h1>TODO App</h1>
+            <p>"Make today productive!"</p>
+        </div>
+        <div class="add_btn">
+            <input type="text" id="task" class="add" placeholder="Add To List "/>
+            <button id="add" >Add To List</button>
+        </div>
+
+        <div class="body_content">
+            <h2>Work List..</h2>
+            <ul class="work_list" id="list">
+                
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+            const task = document.getElementById('task');
+            const add = document.getElementById('add');
+            const list= document.getElementById('list');
+
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(task => addTaskToDOM(task));
+
+
+            add.addEventListener('click', () => {
+                const taskTest = task.value.trim();
+                if (taskTest === '') return;
+
+                addTaskToDOM(taskTest);
+                tasks.push(taskTest);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+
+                task.value = '';
+            });
+
+            function addTaskToDOM(taskTest){
+
+                const li = document.createElement('li');
+                li.classList.add('task_item');
+
+                const span = document.createElement('span');
+                span.textContent = taskTest;
+
+                const delbtn = document.createElement('button');
+                delbtn.textContent = 'Delete';
+                delbtn.classList.add('delete_btn');
+
+                delbtn.addEventListener('click', () => {
+                li.remove();
+                tasks = tasks.filter(t => t !== taskTest);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            });
+
+                li.appendChild(span);
+                li.appendChild(delbtn);
+                list.appendChild(li);
+        
+            }
+    </script>
+
+   
+</body>
+</html>
