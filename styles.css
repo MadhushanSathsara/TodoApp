@@ -142,4 +142,25 @@ button:hover{
 }
 
 
+@media (max-width: 768px) {
+    .body {
+        width: 95%;
+        padding: 1.5rem;
+    }
 
+    .header, .body_content {
+        padding: 1.5rem;
+        line-height: 1.8rem;
+    }
+
+    button, .delete_btn {
+        width: 100%;
+        font-size: 0.9rem;
+        height: 35px;
+    }
+
+    .add {
+        width: 100%;
+        max-width: 100%;
+    }
+}
